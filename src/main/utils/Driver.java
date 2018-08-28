@@ -3,36 +3,32 @@ package main.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 public class Driver {
+	private static final String LINK_ADDRESS = "http://google.pl"; // http://automationpractice.com/index.php
+	public static WebDriver driver;
 	
-	private static WebDriver driver;
-	private static final String LinkAdress = "http://automationpractice.com/index.php";
-	
-	@Parameters({"explorer"})
-		public static WebDriver getDriver(String explorer) {
-		switch (explorer) {
-			case "mozilla":
-				if (driver==null) {
-					System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
-					driver = new FirefoxDriver();
-					driver.get(LinkAdress);
+	@BeforeTest
+	@Parameters({"browser"})
+	public void setup(String browser) throws Exception {
+		if(browser.equalsIgnoreCase("mozilla")) {
+			if (driver==null) {
+				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
+				driver = new FirefoxDriver();
+				driver.get(LINK_ADDRESS);
 			}
-			return driver;
-			case "google":
-				if (driver==null) {
-					System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
-					driver = new ChromeDriver();
-					driver.get(LinkAdress);
-				}
-				return driver;
 		}
-		return null;
+		else if(browser.equalsIgnoreCase("chrome")) {
+			if (driver==null) {
+				System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+				driver = new ChromeDriver();
+				driver.get(LINK_ADDRESS);
+			}
 		}
-		
-		public static void close() {
-			driver.quit();
-			driver = null;
+		else {
+			throw new Exception("Wrong browser! Check parametr for explorer!");
 		}
+	}	
 }
