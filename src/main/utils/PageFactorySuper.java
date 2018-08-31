@@ -5,6 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class PageFactorySuper {
 
 	public PageFactorySuper() {
-		PageFactory.initElements(Driver.driver, this);
+		PageFactory.initElements(Driver.getDriver(), this);
 	}
 }

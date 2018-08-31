@@ -8,11 +8,11 @@ import org.testng.annotations.Parameters;
 
 public class Driver {
 	private static final String LINK_ADDRESS = "http://automationpractice.com/index.php";
-	public static WebDriver driver;
+	private static WebDriver driver;
 	
 	@BeforeTest
 	@Parameters({"browser"})
-	public void setupDriver(String browser) throws Exception {
+	private void setupDriver(String browser) throws Exception {
 		if(browser.equalsIgnoreCase("mozilla")) {
 			if (driver==null) {
 				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
@@ -28,7 +28,16 @@ public class Driver {
 			}
 		}
 		else {
-			throw new Exception("Wrong browser! Check parametr for explorer in testng.xml!");
+			throw new Exception("Wrong browser! Check parametr for browser in testng.xml!");
 		}
-	}	
+	}
+	
+	public static WebDriver getDriver() {
+		return driver;
+	}
+	
+	public static void closeDriver() {
+		driver.close();
+		driver = null;
+	}
 }

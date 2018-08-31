@@ -10,7 +10,7 @@ public enum Names {
 	
 	private String[] namesArray;
 	
-	Names(String...values){
+	private Names(String...values){
 		namesArray = values;
 	}
 	

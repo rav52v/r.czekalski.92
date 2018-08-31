@@ -14,9 +14,8 @@ import main.utils.PageFactorySuper;
 
 public class AccCreationPage extends PageFactorySuper{
 	
-	public AccCreationPage() {
-		super();
-	}
+	private Generator g;
+	private Random r;
 	
 	//-------------Your Personal Information--------------//
 	@FindBy (id = "id_gender1")
@@ -92,8 +91,12 @@ public class AccCreationPage extends PageFactorySuper{
 	@FindBy (id = "submitAccount")
 	private WebElement createAccBtn;
 	
-	Generator g = new Generator();
-	Random r = new Random();
+	
+	public AccCreationPage() {
+		super();
+		r = new Random();
+		g = new Generator();
+	}
 	
 	
 	public AccCreationPage selectGender(Gender gender) {
@@ -262,15 +265,4 @@ public class AccCreationPage extends PageFactorySuper{
 		createAccBtn.click();
 		return new MyAccountPage();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
