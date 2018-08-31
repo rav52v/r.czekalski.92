@@ -6,12 +6,25 @@
     <classes>
       <class name="test.TestSuite_1">
         <methods>
-          <include name="setup"/>
+          <include name="testCreateNewAccount"/>
+          <include name="setupDriver"/>
           <include name="beforeTest"/>
-          <include name="test1"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- test.TestSuite_1 -->
     </classes>
   </test> <!-- Mozilla Firefox Test(failed) -->
+  <test thread-count="5" name="Google Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="test.TestSuite_1">
+        <methods>
+          <include name="testCreateNewAccount"/>
+          <include name="setupDriver"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- test.TestSuite_1 -->
+    </classes>
+  </test> <!-- Google Chrome Test(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

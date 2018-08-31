@@ -5,8 +5,9 @@
     <classes>
       <class name="test.TestSuite_1">
         <methods>
+          <include name="testCreateNewAccount"/>
+          <include name="setupDriver"/>
           <include name="beforeTest"/>
-          <include name="test1"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- test.TestSuite_1 -->

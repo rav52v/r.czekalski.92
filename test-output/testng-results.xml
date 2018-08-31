@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-08-28T23:31:10Z" name="Suite1" finished-at="2018-08-28T23:31:23Z" duration-ms="13073">
+  <suite started-at="2018-08-31T02:34:16Z" name="Suite1" finished-at="2018-08-31T02:34:47Z" duration-ms="30205">
     <groups>
     </groups>
-    <test started-at="2018-08-28T23:31:10Z" name="Mozilla Firefox Test" finished-at="2018-08-28T23:31:16Z" duration-ms="5232">
+    <test started-at="2018-08-31T02:34:16Z" name="Mozilla Firefox Test" finished-at="2018-08-31T02:34:31Z" duration-ms="14781">
       <class name="test.TestSuite_1">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:test.TestSuite_1@fd07cbb]" started-at="2018-08-28T23:31:10Z" name="setup" finished-at="2018-08-28T23:31:13Z" duration-ms="2519" status="PASS">
+        <test-method is-config="true" signature="setupDriver(java.lang.String)[pri:0, instance:test.TestSuite_1@3e96bacf]" started-at="2018-08-31T02:34:16Z" name="setupDriver" finished-at="2018-08-31T02:34:22Z" duration-ms="5402" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -17,24 +17,24 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.TestSuite_1@fd07cbb]" started-at="2018-08-28T23:31:13Z" name="beforeTest" finished-at="2018-08-28T23:31:13Z" duration-ms="47" status="PASS">
+        </test-method> <!-- setupDriver -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.TestSuite_1@3e96bacf]" started-at="2018-08-31T02:34:22Z" name="beforeTest" finished-at="2018-08-31T02:34:22Z" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.TestSuite_1@fd07cbb]" started-at="2018-08-28T23:31:13Z" name="afterTest" finished-at="2018-08-28T23:31:16Z" duration-ms="2651" status="PASS">
+        <test-method signature="testCreateNewAccount()[pri:0, instance:test.TestSuite_1@3e96bacf]" started-at="2018-08-31T02:34:22Z" name="testCreateNewAccount" finished-at="2018-08-31T02:34:26Z" duration-ms="4708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateNewAccount -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.TestSuite_1@3e96bacf]" started-at="2018-08-31T02:34:26Z" name="afterTest" finished-at="2018-08-31T02:34:31Z" duration-ms="4625" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method signature="test1()[pri:0, instance:test.TestSuite_1@fd07cbb]" started-at="2018-08-28T23:31:13Z" name="test1" finished-at="2018-08-28T23:31:13Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
       </class> <!-- test.TestSuite_1 -->
     </test> <!-- Mozilla Firefox Test -->
-    <test started-at="2018-08-28T23:31:16Z" name="Google Chrome Test" finished-at="2018-08-28T23:31:23Z" duration-ms="7794">
+    <test started-at="2018-08-31T02:34:31Z" name="Google Chrome Test" finished-at="2018-08-31T02:34:47Z" duration-ms="15401">
       <class name="test.TestSuite_1">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:test.TestSuite_1@46fa7c39]" started-at="2018-08-28T23:31:16Z" name="setup" finished-at="2018-08-28T23:31:18Z" duration-ms="2528" status="PASS">
+        <test-method is-config="true" signature="setupDriver(java.lang.String)[pri:0, instance:test.TestSuite_1@4f67eb2a]" started-at="2018-08-31T02:34:31Z" name="setupDriver" finished-at="2018-08-31T02:34:36Z" duration-ms="5358" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,16 +44,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.TestSuite_1@46fa7c39]" started-at="2018-08-28T23:31:18Z" name="beforeTest" finished-at="2018-08-28T23:31:19Z" duration-ms="1160" status="PASS">
+        </test-method> <!-- setupDriver -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.TestSuite_1@4f67eb2a]" started-at="2018-08-31T02:34:36Z" name="beforeTest" finished-at="2018-08-31T02:34:38Z" duration-ms="1155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="test1()[pri:0, instance:test.TestSuite_1@46fa7c39]" started-at="2018-08-28T23:31:19Z" name="test1" finished-at="2018-08-28T23:31:19Z" duration-ms="4" status="PASS">
+        <test-method signature="testCreateNewAccount()[pri:0, instance:test.TestSuite_1@4f67eb2a]" started-at="2018-08-31T02:34:38Z" name="testCreateNewAccount" finished-at="2018-08-31T02:34:42Z" duration-ms="4783" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.TestSuite_1@46fa7c39]" started-at="2018-08-28T23:31:19Z" name="afterTest" finished-at="2018-08-28T23:31:23Z" duration-ms="4098" status="PASS">
+        </test-method> <!-- testCreateNewAccount -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.TestSuite_1@4f67eb2a]" started-at="2018-08-31T02:34:42Z" name="afterTest" finished-at="2018-08-31T02:34:47Z" duration-ms="4103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
