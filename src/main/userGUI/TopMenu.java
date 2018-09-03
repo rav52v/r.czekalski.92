@@ -4,9 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import main.enums.Menu;
+import main.poms.MainPage;
+import main.poms.MyAccountPage;
 import main.utils.BasePage;
 
 public class TopMenu extends BasePage{
+	
+	@FindBy (css = ".logout")
+	protected WebElement signOutBtn;
 	
     @FindBy(css = ".shopping_cart")
     protected WebElement shoppingCart;
@@ -19,6 +24,7 @@ public class TopMenu extends BasePage{
 
     @FindBy(css = "#block_top_menu > ul > li:nth-child(3) > a")
     private WebElement t_shirts;
+    
 	
 	public TopMenu() {
 		super();
@@ -50,6 +56,15 @@ public class TopMenu extends BasePage{
 			return t_shirts;
 		}
 		return null;
+	}	
+	
+	public MyAccountPage selectMainMenuOption(Menu menu, String option) {
+		getElementFromMenu(menu, option).click();
+		return new MyAccountPage();
 	}
 	
+	public MainPage signOut() {
+		signOutBtn.click();
+		return new MainPage();
+	}
 }

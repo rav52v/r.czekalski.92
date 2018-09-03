@@ -1,16 +1,15 @@
 package main.poms.store;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import main.data.VariableHolder;
 import main.utils.BasePage;
 import main.utils.Driver;
 
-public class ProductPopUp extends BasePage{
+public class ProductIframe extends BasePage{
 	
 	@FindBy(tagName = "iframe")
 	private WebElement iFrame;
@@ -21,30 +20,26 @@ public class ProductPopUp extends BasePage{
 	@FindBy(css = ".button-container > span:first-child")
 	private WebElement continueShoppingBtn;
 	
-	@FindBy(css = "#layer_cart a[title='Proceed to checkout']")
-	private WebElement proceedToChechoutBtn;
+	@FindBy(css = "div.pb-center-column h1:first-child")
+	private WebElement itemName;
 	
-	public ProductPopUp() {
+	
+	
+	public ProductIframe() {
 		super();
 	}
 	
-	public ProductPopUp addToCart() {
+	public StorePage addToCart() {
 		implicityWaitTurnOff();
 		new WebDriverWait(Driver.getDriver(), 10, 50).until(ExpectedConditions.visibilityOf(iFrame));
 		implicityWaitTurnOn();
-		Driver.getDriver().switchTo().frame(iFrame);		
+		Driver.getDriver().switchTo().frame(iFrame);
+		VariableHolder.itemName = this.itemName.getText();
 		addToCartBtn.click();
 		Driver.getDriver().switchTo().defaultContent();
-		return this;
+		return new StorePage();
 	}
 	
-	public ProductPopUp proceedToCheckout() {
-		implicityWaitTurnOff();
-		new WebDriverWait(Driver.getDriver(), 10, 50).until(ExpectedConditions.
-				invisibilityOf(Driver.getDriver().findElement(By.cssSelector(".fancybox-overlay.fancybox-overlay-fixed"))));
-		implicityWaitTurnOn();
-		proceedToChechoutBtn.click();
-		return this;
-	}
+	
 	
 }

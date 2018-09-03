@@ -45,7 +45,7 @@ public abstract class BasePage extends TestBase{
 				scrollTempValue+=scrollValue-200;
 			}
 			else {
-				scrollTempValue = 0;
+				scrollTempValue+=scrollValue;
 			}
 		}
 		JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
