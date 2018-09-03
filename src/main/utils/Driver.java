@@ -12,7 +12,7 @@ public class Driver {
 	
 	@BeforeTest
 	@Parameters({"browser"})
-	private void setupDriver(String browser) throws Exception {
+	public void setupDriver(String browser) throws Exception {
 		if(browser.equalsIgnoreCase("mozilla")) {
 			if (driver==null) {
 				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");

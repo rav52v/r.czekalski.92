@@ -2,17 +2,16 @@ package main.poms;
 
 import java.util.List;
 import java.util.Random;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
+import main.data.VariableHolder;
 import main.enums.Gender;
 import main.tools.DataBaseReader;
 import main.tools.Generator;
-import main.utils.PageFactorySuper;
+import main.utils.BasePage;
 
-public class AccCreationPage extends PageFactorySuper{
+public class AccCreationPage extends BasePage{
 	
 	private Generator g;
 	private Random r;
@@ -138,11 +137,13 @@ public class AccCreationPage extends PageFactorySuper{
 	}
 	
 	public AccCreationPage typePass(String value) {
+		VariableHolder.password = value;
 		passInput.sendKeys(value);
 		return this;
 	}
 	public AccCreationPage typePass() {
-		passInput.sendKeys(g.gPass(g.randomFromRange(8, 15)));
+		VariableHolder.password = g.gPass(g.randomFromRange(8, 15));
+		passInput.sendKeys(VariableHolder.password);
 		return this;
 	}
 	

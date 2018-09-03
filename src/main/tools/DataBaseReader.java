@@ -10,7 +10,7 @@ import java.util.Random;
 public class DataBaseReader {
 	
 	private Connection con;
-	private final String CON_URL = "jdbc:sqlite:src//test//resources//My_Own_Data_Base.db";
+	private final String CON_URL = "jdbc:sqlite:src//test//resources//My_Own_DataBase.db";
 	
 	public DataBaseReader() {
 		try {

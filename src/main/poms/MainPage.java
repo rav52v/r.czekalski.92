@@ -2,15 +2,16 @@ package main.poms;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import main.utils.PageFactorySuper;
+import main.utils.BasePage;
 
-public class MainPage extends PageFactorySuper{
-	public MainPage () {
-		super();
-	}
+public class MainPage extends BasePage{
 	
 	@FindBy (className = ("login"))
 	private WebElement loginBtn;
+	
+	public MainPage () {
+		super();
+	}
 	
 	public AuthenticationPage clickLoginBtn() {
 		loginBtn.click();
